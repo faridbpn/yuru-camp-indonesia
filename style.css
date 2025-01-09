@@ -1,0 +1,450 @@
+/* navbar */
+nav {
+  z-index: 2;
+}
+
+/* Parallax with Video Background */
+.parallax {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  /* Overlay for Soft Glow */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    z-index: 0;
+    animation: glowing 3s infinite alternate;
+  }
+  
+  @keyframes glowing {
+    from {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    to {
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
+  
+  /* Content Styling */
+  .parallax .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    padding: 0 20px; /* Add padding for better responsiveness */
+  }
+  
+  /* Anime Font */
+  .anime-font {
+    font-family: 'Kaushan Script', cursive;
+    text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff9f80;
+  }
+  
+  /* Button Styling */
+  .anime-button {
+    background: linear-gradient(45deg, #ff6f61, #ff9f80);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-shadow: 0 0 5px white;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .anime-button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #ff9f80, #ff6f61);
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.5);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .parallax .content {
+      padding: 0 10px; /* Ensure content fits within smaller screens */
+    }
+  
+    .anime-font {
+      font-size: 2rem; /* Adjust font size for tablet screens */
+    }
+  
+    .anime-button {
+      padding: 10px 15px; /* Adjust button size */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .anime-font {
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+  
+    .anime-button {
+      padding: 8px 15px; /* Smaller button size */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .anime-font {
+      font-size: 1.2rem; /* Font size for extra small screens */
+    }
+  
+    .anime-button {
+      padding: 6px 12px; /* Compact button for very small screens */
+    }
+  }
+  
+  
+  /* kenapa join */
+  /* Quotes Section */
+.quote-section {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Menyembunyikan elemen yang keluar dari area */
+    padding: 2rem 1rem; /* Padding untuk membuat ruang pada sisi */
+  }
+  
+  .quote-box {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid #007bff;
+    padding-left: 20px;
+    max-width: 70%; /* Menambah lebar box */
+    margin: 0 auto;
+    z-index: 1;
+  }
+  
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    animation: bubble-animation 8s infinite;
+    opacity: 0.6;
+  }
+  
+  .bubble:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    background-image: url("assets/anime/chiaki.png");
+    animation-delay: 0s;
+  }
+  
+  .bubble:nth-child(2) {
+    top: 30%;
+    left: 70%;
+    background-image: url("assets/anime/aoi.png");
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(3) {
+    top: 50%;
+    left: 20%;
+    background-image: url("assets/anime/nadeshiko.png");
+    animation-delay: 4s;
+  }
+  
+  .bubble:nth-child(4) {
+    top: 70%;
+    left: 50%;
+    background-image: url("assets/anime/rin.png");
+    animation-delay: 6s;
+  }
+  
+  /* Animasi gelembung bergerak */
+  @keyframes bubble-animation {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(100px, -100px) scale(1.2);
+    }
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+  
+  /* Responsivitas */
+  @media (max-width: 768px) {
+    .quote-box {
+      font-size: 1.2rem; /* Menurunkan ukuran font di perangkat lebih kecil */
+      max-width: 90%; /* Lebar box kutipan lebih besar di mobile */
+    }
+  
+    .bubble {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .bubble:nth-child(1) {
+      top: 5%;
+      left: 15%;
+    }
+  
+    .bubble:nth-child(2) {
+      top: 25%;
+      left: 60%;
+    }
+  
+    .bubble:nth-child(3) {
+      top: 45%;
+      left: 10%;
+    }
+  
+    .bubble:nth-child(4) {
+      top: 65%;
+      left: 40%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .quote-box {
+      font-size: 1rem; /* Ukuran font lebih kecil untuk ponsel dengan layar lebih kecil */
+      max-width: 95%; /* Box kutipan hampir memenuhi lebar layar */
+    }
+  
+    .bubble {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .bubble:nth-child(1) {
+      top: 8%;
+      left: 20%;
+    }
+  
+    .bubble:nth-child(2) {
+      top: 18%;
+      left: 50%;
+    }
+  
+    .bubble:nth-child(3) {
+      top: 38%;
+      left: 30%;
+    }
+  
+    .bubble:nth-child(4) {
+      top: 58%;
+      left: 60%;
+    }
+  }
+
+  /* 3 card */
+  .service-card {
+    margin-top: 3rem;
+    min-height: 350px; /* Tinggi minimum card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan konten */
+  }
+  .service-card h4 {
+    margin-top: 15px; /* Jarak antar heading dan ikon */
+  }
+  .service-card:hover {
+    transform: translateY(-5px); /* Efek hover */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* service */
+/* Anime Section Styling */
+#anime-map-section {
+    background: linear-gradient(135deg, #ffe5e5, #ffedf0);
+    border-radius: 15px;
+    padding: 50px;
+  }
+  
+  .text-anime {
+    font-family: 'Kaushan Script', cursive;
+    color: #ff6f61;
+  }
+  
+  .btn-pink {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-pink:hover {
+    background-color: #e55b4e;
+    transform: scale(1.1);
+  }
+  
+  /* Carousel Styling */
+  .carousel-item img {
+    object-fit: cover;
+    height: 400px;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #ff6f61;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+  .carousel-inner {
+    border-radius: 15px;
+  }
+  
+  /* audio */
+  audio {
+    display: none;
+  }
+
+  /* gallery */
+  .card {
+    border: none;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 5px solid #ff69b4;
+  }
+  
+  .card-title {
+    color: #ff69b4;
+    font-weight: bold;
+  }
+  
+  .btn-pink {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-pink:hover {
+    background-color: #ff85c1;
+    transform: scale(1.1);
+  }
+  
+  .anime-card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .anime-card:hover .card-img-top {
+    animation: floatImage 3s ease-in-out infinite;
+  }
+  
+  @keyframes floatImage {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Responsif */
+  @media (max-width: 768px) {
+    .card-img-top {
+      height: 150px; /* Kurangi tinggi gambar */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card {
+      margin: 0 auto;
+    }
+  }
+
+  /* faq start */
+
+  .accordion-button {
+    background-color: #7ec9d5;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  /* Change color on hover */
+  .accordion-button:hover {
+    background-color: #5bc0b8;
+  }
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: #5bc0b8;
+  }
+  .accordion-body {
+    background-color: #ff85c1;
+    color: #ddd;
+  }
+
+  /* Animation for accordion buttons */
+  .accordion-button {
+    animation: buttonAnime 0.5s ease-in-out;
+  }
+
+  @keyframes buttonAnime {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .accordion-button {
+      font-size: 1rem;
+    }
+    .accordion-item {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .faq-section {
+    background-image: url('assets/anime/herosection.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  .faq-section .content {
+    position: relative;
+    z-index: 2; /* Agar konten teks berada di atas lapisan gelap */
+    color: white; /* Memberikan teks warna terang agar terlihat */
+  }
+
+  /* join us */
+  .join-us {
+    padding: 50px 0;
+  }
+  .join-us img {
+    max-width: 100%;
+    height: auto;
+  }
